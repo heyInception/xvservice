@@ -1,0 +1,104 @@
+<footer class="footer">
+    <div class="container"></div>
+</footer>
+
+
+<script>
+    const channels = $('input[name="channels"]');
+    const crms = $('input[name="crm"]');
+    let line;
+
+    // Функция отрисовки LeaderLine
+    function drawLine() {
+        const selectedChannel = $('input[name="channels"]:checked');
+        const selectedCRM = $('input[name="crm"]:checked');
+
+        if (selectedChannel.length > 0 && selectedCRM.length > 0) {
+            const channelId = selectedChannel.attr('id');
+            const crmId = selectedCRM.attr('id');
+
+            line = new LeaderLine(document.getElementById(channelId), document.getElementById(crmId), {
+                hide: true,
+                color: '#212121'
+            });
+
+            line.show("draw", {
+                duration: 700,
+                timing: 'linear'
+            });
+            line.setOptions({
+                endPlug: 'behind'
+            });
+            line.position();
+
+            const formTitleFirst = $(selectedChannel).data("name")
+            const formTitleSecond = $(selectedCRM).data("name")
+            $(".connections__subtitle").fadeOut(200, function() {
+                $(this).fadeIn(600);
+            });
+            setTimeout(() => {
+                $("#firstradio").html(formTitleFirst);
+                $("#secondradio").html(formTitleSecond);
+            }, 300);
+            $("#tariff-title").fadeOut(200, function() {
+                $(this).html(formTitleFirst).fadeIn(600);
+            });
+
+        }
+    }
+
+    // Сохранение выбранных значений в localStorage
+    function saveSelection() {
+        const selectedChannelId = $('input[name="channels"]:checked').data('storage');
+        const selectedCRMId = $('input[name="crm"]:checked').data('storage');
+
+        localStorage.setItem('selectedChannelId', selectedChannelId);
+        localStorage.setItem('selectedCRMId', selectedCRMId);
+    }
+
+    // Восстановление выбранных значений из localStorage
+    function restoreSelection() {
+        const selectedChannelId = localStorage.getItem('selectedChannelId');
+        const selectedCRMId = localStorage.getItem('selectedCRMId');
+
+        if (selectedChannelId) {
+            $(`[data-storage="${selectedChannelId}"]`).prop('checked', true);
+            //selectedChannel = $('input[name="channels"]:checked').data("name")
+            //localStorage.setItem('selectedChannelId', selectedChannel)
+        }
+
+        if (selectedCRMId) {
+
+            $(`[data-storage="${selectedCRMId}"]`).prop('checked', true);
+            //selectedCrm = $('input[name="crm"]:checked').data("name")
+            //localStorage.setItem('selectedCRMId', selectedCrm)
+        }
+    }
+
+    // Вызываем функцию отрисовки LeaderLine при загрузке страницы
+    $(document).ready(function() {
+        restoreSelection(); // Восстанавливаем выбранные значения из localStorage
+        setTimeout(function() { // задаем задержку
+            drawLine();
+        }, 500);
+
+    });
+
+    // Обработчик событий при изменении радио-кнопок каналов
+    channels.change(function() {
+        if (line) {
+            line.remove();
+        }
+        drawLine();
+        saveSelection(); // Сохраняем выбранные значения в localStorage
+    });
+
+    // Обработчик событий при изменении радио-кнопок CRM
+    crms.change(function() {
+        if (line) {
+            line.remove();
+        }
+        drawLine();
+        saveSelection(); // Сохраняем выбранные значения в localStorage
+    });
+</script>
