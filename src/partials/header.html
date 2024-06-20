@@ -1,3 +1,82 @@
 <header class="header">
-  <div class="container"></div>
+  <div class="container">
+    <div class="header__row">
+      <div class="header__top">
+        <div class="header__logo"><img src="../img/logo.png" alt=""></div>
+        <div class="header__tabs">
+          <div class="header__self">Для себя</div>
+          <div class="header__business">Для бизнеса</div>
+        </div>
+        <div class="header__top-menu">
+          <li><a href="">О системе</a></li>
+          <li><a href="">Гарантии</a></li>
+        </div>
+        <div class="header__flag">
+          <a href=""><img src="../img/en.png" alt=""></a>
+          <a href=""><img src="../img/ru.png" alt=""></a>
+        </div>
+        <div class="header__login">
+          <a href="">Войти</a>
+        </div>
+        <div class="header__burger">
+          <button class="btn-reset burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
+            <span class="burger__line"></span>
+          </button>
+        </div>
+      </div>
+      <div class="header__bottom">
+        <nav class="header__menu">
+          <li><a href="">Международные переводы</a></li>
+          <li><a href="">Виртуальная карта</a></li>
+          <li><a href="">Покупка криптовалюты</a></li>
+          <li><a href="">Прием платежей</a></li>
+          <li><a href="">Контакты</a></li>
+        </nav>
+        <div class="header__wrap">
+          <div class="header__left">
+            <div class="header__switch">
+              <input id="toggle-on" class="header__switch-toggle header__switch-toggle-left" name="toggle" value="false"
+                type="radio" checked>
+              <label for="toggle-on" class="header__switch-btn">Оплачивайте</label>
+              <input id="toggle-off" class="header__switch-toggle header__switch-toggle-right" name="toggle"
+                value="true" type="radio">
+              <label for="toggle-off" class="header__switch-btn">Принимайте</label>
+            </div>
+            <div class="header__title">
+              <h1>Международные платежи за несколько минут</h1>
+            </div>
+            <div class="header__subtitle">
+              36 стран, 8 валют. Быстрые переводы на счета физических и юридических лиц по SWIFT и SEPA
+            </div>
+            <div class="header__buttons">
+              <div class="header__button header__button_green"></div>
+              <div class="header__button header__button_transparent"></div>
+            </div>
+          </div>
+          <div class="header__right">
+            <div class="header__form">
+              <div class="header__head">Ваш перевод</div>
+              <div class="header__flags">
+                <span>Принимаем</span>
+                <img src="../img/form-en.png" alt="">
+                <img src="../img/form-eur.png" alt="">
+                <img src="../img/form-cn.png" alt="">
+                <img src="../img/form-t.png" alt="">
+                <img src="../img/form-ru.png" alt="">
+              </div>
+              <div class="header__label">
+                <label for="country">Откуда списать</label>
+                <select id="country" name="country" data-placeholder="Select a country" data-dynamic-select>
+                  <option value="United States" data-img="../img/form-en.png" data-img-width="40px" data-img-height="40px">United States</option>
+                  <option value="United Kingdom" data-img="../img/form-eur.png" data-img-width="40px" data-img-height="40px">United Kingdom</option>
+                  <option value="Japan" data-img="../img/form-ru.png" data-img-width="40px" data-img-height="40px">Japan</option>
+                </select>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
