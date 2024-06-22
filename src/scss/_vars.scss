@@ -1,15 +1,15 @@
 // если вы хотите использовать sass-переменные - удалите root
 // colors
 :root {
-  // base
-  --font-family: "Inter", sans-serif;
-  --second-family: "Mabry Pro", sans-serif;
-  --third-family: "GT Eesti Pro Display", sans-serif;
-  --content-width: 1200px;
-  --container-offset: 20px;
-  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
-  // colors
-  --lighy-grey: #e9eff2;
-	--orange: #f58934;
-	--white: #fff;
+    // base
+    --font-family: "Inter", sans-serif;
+    --second-family: "Mabry Pro", sans-serif;
+    --third-family: "GT Eesti Pro Display", sans-serif;
+    --content-width: 1420px;
+    --container-offset: 20px;
+    --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+    // colors
+    --lighy-grey: #e9eff2;
+    --orange: #f58934;
+    --white: #fff;
 }

@@ -4,13 +4,15 @@
 @include('partials/head.html')
 
 <body class="page__body">
-  <div class="site-container">
-    <main class="main">
+    <div class="site-container">
+        <main class="main">
 
-      @include('partials/header.html')
-    </main>
+            @include('partials/header.html') @include('partials/company.html') @include('partials/banner.html') @include('partials/service.html')
+            <div class="s" style="height: 1000px"></div>
+        </main>
+        @include('partials/footer.html')
 
-  </div>
+    </div>
 </body>
 
 </html>

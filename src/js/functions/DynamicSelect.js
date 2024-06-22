@@ -6,55 +6,59 @@
  */
 class DynamicSelect {
 
-  constructor(element, options = {}) {
-      let defaults = {
-          placeholder: 'Select an option',
-          columns: 1,
-          name: '',
-          width: '',
-          height: '',
-          data: [],
-          onChange: function() {}
-      };
-      this.options = Object.assign(defaults, options);
-      this.selectElement = typeof element === 'string' ? document.querySelector(element) : element;
-      for(const prop in this.selectElement.dataset) {
-          if (this.options[prop] !== undefined) {
-              this.options[prop] = this.selectElement.dataset[prop];
-          }
-      }
-      this.name = this.selectElement.getAttribute('name') ? this.selectElement.getAttribute('name') : 'dynamic-select-' + Math.floor(Math.random() * 1000000);
-      if (!this.options.data.length) {
-          let options = this.selectElement.querySelectorAll('option');
-          for (let i = 0; i < options.length; i++) {
-              this.options.data.push({
-                  value: options[i].value,
-                  text: options[i].innerHTML,
-                  img: options[i].getAttribute('data-img'),
-                  selected: options[i].selected,
-                  html: options[i].getAttribute('data-html'),
-                  imgWidth: options[i].getAttribute('data-img-width'),
-                  imgHeight: options[i].getAttribute('data-img-height')
-              });
-          }
-      }
-      this.element = this._template();
-      this.selectElement.replaceWith(this.element);
-      this._updateSelected();
-      this._eventHandlers();
-  }
+    constructor(element, options = {}) {
+        let defaults = {
+            placeholder: 'Select an option',
+            columns: 1,
+            name: '',
+            width: '',
+            height: '',
+            data: [],
+            onChange: function() {}
+        };
+        this.options = Object.assign(defaults, options);
+        this.selectElement = typeof element === 'string' ? document.querySelector(element) : element;
+        for (const prop in this.selectElement.dataset) {
+            if (this.options[prop] !== undefined) {
+                this.options[prop] = this.selectElement.dataset[prop];
+            }
+        }
+        this.name = this.selectElement.getAttribute('name') ? this.selectElement.getAttribute('name') : 'dynamic-select-' + Math.floor(Math.random() * 1000000);
+        if (!this.options.data.length) {
+            let options = this.selectElement.querySelectorAll('option');
+            for (let i = 0; i < options.length; i++) {
+                this.options.data.push({
+                    value: options[i].value,
+                    text: options[i].innerHTML,
+                    img: options[i].getAttribute('data-img'),
+                    span: options[i].getAttribute('data-span'),
+                    selected: options[i].selected,
+                    html: options[i].getAttribute('data-html'),
+                    imgWidth: options[i].getAttribute('data-img-width'),
+                    imgHeight: options[i].getAttribute('data-img-height')
+                });
+            }
+        }
+        this.element = this._template();
+        this.selectElement.replaceWith(this.element);
+        this._updateSelected();
+        this._eventHandlers();
+    }
 
-  _template() {
-      let optionsHTML = '';
-      for (let i = 0; i < this.data.length; i++) {
-          let optionWidth = 100 / this.columns;
-          let optionContent = '';
-          if (this.data[i].html) {
-              optionContent = this.data[i].html;
-          } else {
-              optionContent = `
+    _template() {
+            let optionsHTML = '';
+            for (let i = 0; i < this.data.length; i++) {
+                let optionWidth = 100 / this.columns;
+                let optionContent = '';
+                if (this.data[i].html) {
+                    optionContent = this.data[i].html;
+                } else {
+                    optionContent = `
                   ${this.data[i].img ? `<img src="${this.data[i].img}" alt="${this.data[i].text}" class="${this.data[i].imgWidth && this.data[i].imgHeight ? 'dynamic-size' : ''}" style="${this.data[i].imgWidth ? 'width:' + this.data[i].imgWidth + ';' : ''}${this.data[i].imgHeight ? 'height:' + this.data[i].imgHeight + ';' : ''}">` : ''}
+                  ${this.data[i].text ? '<div class="dynamic-select-option-wrap">' : ''}
                   ${this.data[i].text ? '<span class="dynamic-select-option-text">' + this.data[i].text + '</span>' : ''}
+                  ${this.data[i].text ? '<span class="dynamic-select-option-span">' + this.data[i].span + '</span>' : ''}
+                  ${this.data[i].text ? '</div>' : ''}
               `;
           }
           optionsHTML += `
