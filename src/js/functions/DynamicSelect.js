@@ -57,7 +57,7 @@ class DynamicSelect {
                   ${this.data[i].img ? `<img src="${this.data[i].img}" alt="${this.data[i].text}" class="${this.data[i].imgWidth && this.data[i].imgHeight ? 'dynamic-size' : ''}" style="${this.data[i].imgWidth ? 'width:' + this.data[i].imgWidth + ';' : ''}${this.data[i].imgHeight ? 'height:' + this.data[i].imgHeight + ';' : ''}">` : ''}
                   ${this.data[i].text ? '<div class="dynamic-select-option-wrap">' : ''}
                   ${this.data[i].text ? '<span class="dynamic-select-option-text">' + this.data[i].text + '</span>' : ''}
-                  ${this.data[i].text ? '<span class="dynamic-select-option-text">' + this.data[i].span + '</span>' : ''}
+                  ${this.data[i].text ? '<span class="dynamic-select-option-span">' + this.data[i].span + '</span>' : ''}
                   ${this.data[i].text ? '</div>' : ''}
               `;
           }

@@ -1,0 +1,98 @@
+.company {
+    &__column {
+        display: flex;
+        flex-flow: column;
+        gap: 100px;
+        padding: 30px 0 50px;
+    }
+    &__row {
+        display: flex;
+        flex-flow: row;
+        &_sb {
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    &__items {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        gap: 20px;
+    }
+    &__item {
+        border: 1px solid;
+        border-radius: 20px;
+        padding: 40px 45px;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 133%;
+        // color: var(--white);
+        height: 186px;
+        &_6 {
+            flex: 0 0 701px;
+            height: 393px;
+            font-size: 32px;
+            line-height: 119%;
+        }
+    }
+    &__items-col {
+        display: flex;
+        flex-flow: column;
+        gap: 20px;
+    }
+    &__items-row {
+        display: flex;
+        flex-flow: row;
+        gap: 20px;
+    }
+    &__left {
+        flex: 0 0 713px;
+    }
+    &__title {
+        font-family: var(--second-family);
+        font-weight: 700;
+        font-size: 42px;
+        color: #173300;
+        margin-bottom: 60px;
+        span {
+            color: #9FE870;
+        }
+    }
+    &__numbers {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        gap: 60px;
+    }
+    &__num {
+        display: flex;
+        flex-flow: column;
+        gap: 20px;
+        font-family: var(--second-family);
+        font-weight: 700;
+        font-size: 72px;
+        line-height: 100%;
+        color: #173300;
+        span {
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 137%;
+            color: #859c73;
+        }
+    }
+    &__right {
+        flex: 0 0 607px;
+    }
+    &__imgs {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        column-gap: 50px;
+        row-gap: 20px;
+        img {
+            height: 75px;
+        }
+    }
+}
