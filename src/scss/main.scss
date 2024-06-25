@@ -4,6 +4,13 @@
 @import "fonts";
 @import "settings";
 // подключения компонентов страницы
+.burger {
+    @include burger
+}
+main {
+  display: flex;
+  flex-flow: column;
+}
 @import "./components/header";
 @import "./components/company";
 @import "./components/banner";
@@ -13,3 +20,9 @@
 @import "./components/save";
 @import "./components/smi";
 @import "./components/news";
+@import "./components/rec";
+@import "./components/seo";
+@import "./components/faq";
+@import "./components/click";
+@import "./components/footer";
+@import "./components/media";
