@@ -399,18 +399,7 @@ $(document).ready(function() {
     $('.faq__item').click(function() {
 
         $(this).toggleClass('faq__item_active');
-        $(this).find('.faq__text').toggleClass('faq__text_active');
+        $(this).find('.faq__content').toggleClass('faq__content_active');
     });
 
-    $(document).ready(function() {
-        $('input[type="radio"]').change(function() {
-            if (!$('input[type="radio"]').is(':checked')) {
-                $('.calc__result').slideUp();
-            } else {
-                $('.calc__result').slideDown(500, function() {
-                    $(this).css('display', 'flex');
-                });
-            }
-        });
-    });
 });
