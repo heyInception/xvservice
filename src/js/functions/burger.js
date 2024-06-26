@@ -12,6 +12,7 @@
     burger?.classList.toggle('burger__active');
     menu?.classList.toggle('header__wrap_active');
     jQuery("[data-menu]").slideToggle(500).css("display", "block");
+    jQuery(".header").toggleClass('header_active');
 
     if (menu?.classList.contains('menu--active')) {
       burger?.setAttribute('aria-expanded', 'true');
@@ -47,7 +48,7 @@
       burger?.setAttribute('aria-expanded', 'false');
       burger?.setAttribute('aria-label', 'Открыть меню');
       burger.classList.remove('burger__active');
-      menu.classList.remove('header__wrap_active');
+      menu.classList.remove('fixed-menu_active');
       //enableScroll();
     });
   });

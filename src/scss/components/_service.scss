@@ -4,6 +4,7 @@
         flex-flow: column;
         gap: 40px;
         align-items: center;
+        padding: 50px 0;
     }
     &__title {
         font-family: var(--second-family);
@@ -18,6 +19,7 @@
         line-height: 130%;
         text-align: center;
         color: #173300;
+        max-width: 830px;
     }
     &__items {
         display: flex;

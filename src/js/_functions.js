@@ -246,22 +246,8 @@ import { burger } from './functions/burger';
 
 // Реализация табов
 import GraphTabs from 'graph-tabs';
-const tabs = new GraphTabs('spec');
-const selectElement = document.querySelector('#specialization'); // ID вашего select элемента
+const tabs = new GraphTabs('work');
 
-selectElement.addEventListener('change', function() {
-    const selectedValue = this.value;
-    const index = Array.from(this.options).findIndex(option => option.value === selectedValue);
-
-    if (index > -1) {
-        const selectedTab = document.querySelector(`#spec${index + 1}`);
-        const currentTab = document.querySelector('.tabs__nav-btn--active');
-
-        if (selectedTab !== currentTab) {
-            tabs.switchTabs(selectedTab, currentTab);
-        }
-    }
-});
 
 // Получение высоты шапки сайта (не забудьте вызвать функцию)
 // import { getHeaderHeight } from './functions/header-height';
@@ -279,7 +265,7 @@ selectElement.addEventListener('change', function() {
 import Swiper from 'swiper';
 import { Navigation, Pagination, Thumbs, Scrollbar } from 'swiper/modules';
 
-let swiperSlider = new Swiper(".slider__start", {
+let swiperSlider = new Swiper(".news__slider", {
     modules: [Navigation, Pagination],
     pagination: {
         el: '.swiper-pagination',
@@ -287,9 +273,10 @@ let swiperSlider = new Swiper(".slider__start", {
 
     // Navigation arrows
     navigation: {
-        nextEl: '.slider__button_next',
-        prevEl: '.slider__button_prev',
+        nextEl: '.news__next',
+        prevEl: '.news__prev',
     },
+    watchSlidesProgress: true,
     centeredSlides: false,
     breakpoints: {
         // when window width is >= 320px
@@ -304,7 +291,7 @@ let swiperSlider = new Swiper(".slider__start", {
         },
         // when window width is >= 640px
         1231: {
-            slidesPerView: 4,
+            slidesPerView: '3.5',
             spaceBetween: 20
         }
     }
@@ -412,18 +399,7 @@ $(document).ready(function() {
     $('.faq__item').click(function() {
 
         $(this).toggleClass('faq__item_active');
-        $(this).find('.faq__text').toggleClass('faq__text_active');
+        $(this).find('.faq__content').toggleClass('faq__content_active');
     });
 
-    $(document).ready(function() {
-        $('input[type="radio"]').change(function() {
-            if (!$('input[type="radio"]').is(':checked')) {
-                $('.calc__result').slideUp();
-            } else {
-                $('.calc__result').slideDown(500, function() {
-                    $(this).css('display', 'flex');
-                });
-            }
-        });
-    });
 });
