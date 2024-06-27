@@ -14,6 +14,8 @@
     }
     &__content {
         padding: 0 120px;
+        height: 203px;
+        overflow: hidden;
         p {
             font-family: var(--font-family);
             font-weight: 400;
@@ -21,5 +23,8 @@
             line-height: 137%;
             color: #173300;
         }
+    }
+    &__button {
+      display: none;
     }
 }
