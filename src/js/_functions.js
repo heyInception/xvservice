@@ -158,43 +158,26 @@ function setTranslate(xPos, el) {
 // tabs animated
 
 $(document).ready(function () {
-  // initialize
-  $(document)
-    .find('.header__tabs:has(.nav-underline)').each(function initialize() {
-      var $container = $(this);
-      var $active = $container.find('div.active').first();
-      var $underline = $container.find('.nav-underline');
+  // Общая функция для обновления подчеркивания
+  function updateUnderline($container, $active) {
+    let $underline = $container.find('.nav-underline');
+    let left = $active.position().left;
+    let width = $active.outerWidth();
+    $underline.css({ left: left, width: width });
+  }
 
-      var left = $active.position().left;
-      var width = $active.outerWidth();
+  // Инициализация подчеркивания для каждого блока
 
-      $underline.css({ left: left, width: width });
-    });
 
-  $(document)
-    .on('mouseenter focus', '.header__tabs:has(.nav-underline) > li > div', function () {
-      var $this = $(this);
-      var $parent = $this.parent();
-      var $container = $parent.closest('.header__tabs');
-      var $underline = $container.find('.nav-underline');
+  // Обработчики событий
+  $(document).on('mouseenter', '.header__tabs:has(.nav-underline) > li > div', function () {
+    updateUnderline($(this).closest('.header__tabs'), $(this));
+  });
 
-      var left = $parent.position().left;
-      var width = $parent.outerWidth();
-
-      $underline.css({ left: left, width: width });
-    })
-    .on('mouseleave blur', '.header__tabs:has(.nav-underline) > li > div', function () {
-      var $this = $(this);
-      var $container = $this.closest('.header__tabs');
-      var $active = $container.find('div.active').first();
-      var $underline = $container.find('.nav-underline');
-
-      var left = $active.position().left;
-      var width = $active.outerWidth();
-
-      $underline.css({ left: left, width: width });
-    });
-
+  $(document).on('mouseleave', '.header__tabs:has(.nav-underline) > li > div', function () {
+    var $active = $(this).closest('.header__tabs').find('div.active').first();
+    updateUnderline($(this).closest('.header__tabs'), $active);
+  });
 });
 // new DynamicSelect('#country', {
 //     width: '10px',
@@ -401,20 +384,26 @@ $(document).ready(function () {
     $(this).toggleClass('faq__item_active');
     $(this).find('.faq__content').toggleClass('faq__content_active');
   });
-  $(document).ready(function () {
-    var $seoContent = $(".seo__content");
-    var $seoInner = $(".seo__inner");
-    var maxHeight = $seoInner.height() + 'px';
-    $seoContent.css('height', '200px')
-    $('#show_more').click(function () {
-      if ($seoContent.height() !== 200) {
-        $seoContent.animate({ height: '200px' }, 500);
-        $('#show_more').text('Читать далее');
-      } else {
-        $seoContent.animate({ height: maxHeight }, 500);
 
-        $('#show_more').text('Свернуть');
-      }
+  const mediaQuery = window.matchMedia('(max-width: 1419px)')
+  // Check if the media query is true
+  if (mediaQuery.matches) {
+    $(document).ready(function () {
+      var $seoContent = $(".seo__content");
+      var $seoInner = $(".seo__inner");
+      var maxHeight = $seoInner.height() + 'px';
+      $seoContent.css('height', '200px')
+      $('#show_more').click(function () {
+        if ($seoContent.height() !== 200) {
+          $seoContent.animate({ height: '200px' }, 500).removeClass('seo__content_active');
+          $('#show_more').text('Читать полностью    ');
+        } else {
+          $seoContent.addClass('seo__content_active').animate({ height: maxHeight }, 500);
+
+          $('#show_more').text('Свернуть');
+        }
+      });
     });
-  });
+  }
+
 });
