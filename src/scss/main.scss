@@ -12,17 +12,16 @@ main {
   flex-flow: column;
 }
 @import "./components/header";
-@import "./components/company";
-@import "./components/banner";
-@import "./components/why";
-@import "./components/service";
-@import "./components/work";
+@import "./components/virtual";
+@import "./components/card";
+@import "./components/v-cards";
+@import "./components/cabinet";
+@import "./components/tariff";
+@import "./components/open";
 @import "./components/save";
-@import "./components/smi";
-@import "./components/news";
-@import "./components/rec";
+@import "./components/reviews";
+@import "./components/question";
 @import "./components/seo";
 @import "./components/faq";
-@import "./components/click";
 @import "./components/footer";
 @import "./components/media";
