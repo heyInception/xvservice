@@ -4,15 +4,17 @@
 @include('partials/head.html')
 
 <body class="page__body">
-    <div class="site-container">
-        <main class="main">
+  <div class="site-container">
+    <main class="main">
 
-            @include('partials/header.html') @include('partials/company.html') @include('partials/banner.html') @include('partials/why.html') @include('partials/service.html') @include('partials/work.html') @include('partials/save.html') @include('partials/smi.html')
-            @include('partials/news.html') @include('partials/rec.html') @include('partials/seo.html') @include('partials/faq.html') @include('partials/click.html')
-        </main>
-        @include('partials/footer.html')
+      @include('partials/header.html') @include('partials/virtual.html') @include('partials/card.html')
+      @include('partials/v-cards.html') @include('partials/cabinet.html') @include('partials/open.html')
+      @include('partials/tariff.html') @include('partials/save.html') @include('partials/reviews.html')
+      @include('partials/question.html') @include('partials/seo.html') @include('partials/faq.html')
+    </main>
+    @include('partials/footer.html')
 
-    </div>
+  </div>
 </body>
 
 </html>
