@@ -51,6 +51,7 @@
         burger.setAttribute('aria-label', 'Открыть меню');
         burger.classList.remove('burger__active');
         menu.classList.remove('header__wrap_active');
+        jQuery(menu).slideUp(500);
         //enableScroll();
       });
     });
