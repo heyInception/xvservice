@@ -1,8 +1,5 @@
 .header {
-  background-image: url(../../img/main-bg.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100vh;
-  background-position-y: 110%;
+  background-color: #fff;
   .fixed-menu {
     display: none;
   }
@@ -22,7 +19,7 @@
       position: absolute;
       content: "";
       width: calc(100vw + 100%);
-      left: -20%;
+      left: 0;
       height: 1px;
       bottom: 0;
       background: #b5c7a5;
@@ -66,19 +63,19 @@
     font-size: 16px;
     line-height: 137%;
     text-align: center;
-    color: #b5c7a5;
+    color: #859c73;
     cursor: pointer;
     height: 100%;
     display: flex;
     align-items: center;
     position: relative;
     &.active {
-      color: #9fe870;
+      color: #6ac232;
     }
     &:hover,
     &:active,
     &:focus {
-      color: #9fe870;
+      color: #6ac232;
     }
   }
   &__business {
@@ -87,19 +84,22 @@
     font-size: 16px;
     line-height: 137%;
     text-align: center;
-    color: #b5c7a5;
+    color: #859c73;
     cursor: pointer;
     height: 100%;
     display: flex;
     align-items: center;
     &.active {
-      color: #9fe870;
+      color: #6ac232;
     }
     &:hover,
     &:active,
     &:focus {
-      color: #9fe870;
+      color: #6ac232;
     }
+  }
+  &__tabs-mobile {
+    display: none;
   }
   &__tabs {
     position: relative;
@@ -134,7 +134,7 @@
       bottom: 0;
       width: 67px;
       height: 2px;
-      background: #9fe870;
+      background: #6ac232;
       will-change: left, width;
       transition:
         left 0.2s,
@@ -154,7 +154,7 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 137%;
-        color: #b5c7a5;
+        color: #859c73;
         &:hover,
         &:active,
         &:focus {
@@ -184,10 +184,10 @@
       font-weight: 400;
       font-size: 16px;
       line-height: 137%;
-      color: #9fe870;
+      color: #6ac232;
       &:before {
         content: "";
-        background-image: url("data:image/svg+xml,%3Csvg width='20' height='21' viewBox='0 0 20 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M20 10.5C20 16.0228 15.5228 20.5 10 20.5C4.47715 20.5 0 16.0228 0 10.5C0 4.97715 4.47715 0.5 10 0.5C15.5228 0.5 20 4.97715 20 10.5ZM13 7.5C13 9.1569 11.6569 10.5 10 10.5C8.3431 10.5 7 9.1569 7 7.5C7 5.84315 8.3431 4.5 10 4.5C11.6569 4.5 13 5.84315 13 7.5ZM10 19C11.784 19 13.4397 18.4504 14.8069 17.5112C15.4108 17.0964 15.6688 16.3062 15.3178 15.6632C14.59 14.3303 13.0902 13.5 9.9999 13.5C6.90969 13.5 5.40997 14.3302 4.68214 15.6632C4.33105 16.3062 4.5891 17.0963 5.19296 17.5111C6.56018 18.4503 8.2159 19 10 19Z' fill='%239FE870' /%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='21' viewBox='0 0 20 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M20 10.5C20 16.0228 15.5228 20.5 10 20.5C4.47715 20.5 0 16.0228 0 10.5C0 4.97715 4.47715 0.5 10 0.5C15.5228 0.5 20 4.97715 20 10.5ZM13 7.5C13 9.1569 11.6569 10.5 10 10.5C8.3431 10.5 7 9.1569 7 7.5C7 5.84315 8.3431 4.5 10 4.5C11.6569 4.5 13 5.84315 13 7.5ZM10 19C11.784 19 13.4397 18.4504 14.8069 17.5112C15.4108 17.0964 15.6688 16.3062 15.3178 15.6632C14.59 14.3303 13.0902 13.5 9.9999 13.5C6.90969 13.5 5.40997 14.3302 4.68214 15.6632C4.33105 16.3062 4.5891 17.0963 5.19296 17.5111C6.56018 18.4503 8.2159 19 10 19Z' fill='%236AC232' /%3E%3C/svg%3E");
         background-repeat: no-repeat;
         position: relative;
         width: 20px;
@@ -220,11 +220,11 @@
         font-size: 16px;
         line-height: 137%;
         text-align: center;
-        color: #b5c7a5;
+        color: #859c73;
         &:hover,
         &:active,
         &:focus {
-          color: #9fe870;
+          color: #6ac232;
         }
       }
       &:hover {
@@ -261,7 +261,7 @@
             &:hover,
             &:active,
             &:focus {
-              color: #9fe870;
+              color: #6ac232;
             }
           }
         }
