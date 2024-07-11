@@ -1,0 +1,120 @@
+.reviews {
+  background: linear-gradient(128deg, #1b4c46 0%, #232232 51.5%, #19564b 100%);
+  &__column {
+    display: flex;
+    flex-flow: column;
+    gap: 22px;
+    padding: 40px 0 80px;
+  }
+
+  &__title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 42px;
+    color: #f3f7f4;
+  }
+
+  &__tabs {
+    .tabs {
+      display: flex;
+      flex-flow: column;
+      gap: 40px;
+      &__nav {
+        display: flex;
+        flex-flow: row;
+        gap: 20px;
+      }
+
+      &__nav-item {
+      }
+
+      &__nav-btn {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        text-align: center;
+        color: #859c73;
+        border-radius: 27px;
+        padding: 10px 20px;
+        border: 1px solid #859c73;
+        &:hover,
+        &:active,
+        &:focus {
+          color: #173300;
+          background: #9fe870;
+        }
+        &--active {
+          font-family: var(--font-family);
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 143%;
+          text-align: center;
+          color: #173300;
+          border: 1px solid #9fe870;
+          background: #9fe870;
+        }
+      }
+
+      &__content {
+      }
+
+      &__panel {
+        flex-flow: row wrap;
+        gap: 20px;
+        &--active {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  &__item {
+    background: var(--white);
+    flex: 1 0 0;
+    border-radius: 20px;
+    padding: 30px 20px;
+    min-height: 207px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+  }
+
+  &__head {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    color: #173300;
+  }
+
+  &__wrap {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    &_ur {
+      margin-top: 20px;
+      justify-content: space-between;
+    }
+  }
+
+  &__img {
+    &_ur {
+    }
+  }
+
+  &__name {
+    display: flex;
+    flex-flow: column;
+    span {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 143%;
+      color: #173300;
+    }
+    &_ur {
+    }
+  }
+}

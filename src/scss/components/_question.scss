@@ -1,0 +1,69 @@
+.question {
+  &__column {
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    border: 1px solid #b5c7a5;
+    border-radius: 20px;
+    padding: 60px;
+    background: var(--white);
+    margin: 50px 0;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      right: 60px;
+      bottom: 0;
+      background-image: url(../../img/question-img.png);
+      background-repeat: no-repeat;
+      width: 380px;
+      height: 322px;
+      background-size: contain;
+    }
+  }
+
+  &__title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 42px;
+    color: #173300;
+    max-width: 477px;
+  }
+
+  &__subtitle {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 137%;
+    color: #859c73;
+    max-width: 477px;
+  }
+
+  &__button {
+    margin-top: 20px;
+    button {
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 137%;
+      color: #173300;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      height: 56px;
+      background: #9fe870;
+      border-radius: 41px;
+      max-width: 280px;
+      width: 100%;
+      &::before {
+        content: '';
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='31' viewBox='0 0 30 31' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 27.6978C21.9035 27.6978 27.5 22.1013 27.5 15.1978C27.5 8.29419 21.9035 2.69775 15 2.69775C8.09644 2.69775 2.5 8.29419 2.5 15.1978C2.5 17.1974 2.96952 19.0873 3.80432 20.7634C4.02617 21.2088 4.10001 21.7179 3.9714 22.1985L3.22689 24.9811C2.90369 26.189 4.00876 27.294 5.21669 26.9709L7.99924 26.2264C8.47991 26.0978 8.98901 26.1716 9.43441 26.3934C11.1105 27.2283 13.0004 27.6978 15 27.6978Z' stroke='%23173300' stroke-width='1.375' /%3E%3Cpath d='M15 20.1978V10.1978' stroke='%23173300' stroke-width='1.375' stroke-linecap='round' /%3E%3Cpath d='M10 17.6978V12.6978' stroke='%23173300' stroke-width='1.375' stroke-linecap='round' /%3E%3Cpath d='M20 17.6978V12.6978' stroke='%23173300' stroke-width='1.375' stroke-linecap='round' /%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 31px;
+        display: inline-block;
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+.card {
+  &__row {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    width: 100%;
+    padding: 50px 0;
+  }
+
+  &__column {
+    display: flex;
+    flex-flow: column;
+    gap: 30px;
+    &:first-child {
+      flex: 0 0 801px;
+    }
+    &:last-child {
+      position: relative;
+      flex: 1 0 0;
+      &::after {
+        position: absolute;
+        content: "";
+        background-image: url(../../img/card-sticker.png);
+        background-repeat: no-repeat;
+        width: 332px;
+        height: 248px;
+        transform: rotate(12deg);
+        bottom: -20px;
+        left: -150px;
+      }
+    }
+  }
+
+  &__title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 42px;
+    color: #173300;
+    max-width: 709px;
+  }
+
+  &__subtitle {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    color: #173300;
+  }
+
+  &__list {
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    li {
+      padding-left: 36px;
+      p {
+        margin: 0;
+        padding: 0;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 130%;
+        color: #173300;
+        position: relative;
+        &::before {
+          content: "";
+          background-image: url("data:image/svg+xml,%3Csvg width='16' height='39' viewBox='0 0 16 39' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='7.5' fill='white' stroke='%239FE870' /%3E%3Ccircle cx='8' cy='8' r='5' fill='%239FE870' /%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          width: 16px;
+          height: 16px;
+          display: inline-block;
+          position: absolute;
+          left: -36px;
+          top: 6px;
+        }
+      }
+      span {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 130%;
+        color: #173300;
+      }
+    }
+  }
+  img {
+    max-height: 527px;
+    object-fit: contain;
+  }
+}

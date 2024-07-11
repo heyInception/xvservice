@@ -1,0 +1,58 @@
+.v-cards {
+  &__column {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 60px;
+    padding: 50px 0;
+  }
+
+  &__title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 42px;
+    color: #173300;
+  }
+
+  &__items {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+  }
+
+  &__item {
+    flex-flow: row;
+    display: flex;
+    flex: 1 0 460px;
+    background: #f3f7f4;
+    padding: 30px;
+    border-radius: 20px;
+    min-height: 250px;
+    position: relative;
+  }
+
+  &__head {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    color: #173300;
+    max-width: 253px;
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    img {
+      max-height: 200px;
+      object-fit: contain;
+    }
+    &_max {
+      img {
+        max-height: 250px;
+      }
+    }
+  }
+}
